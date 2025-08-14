@@ -51,12 +51,9 @@ $(document).ready(function () {
 
     // Initialize tooltips
     $('[data-bs-toggle="tooltip"]').tooltip();
-});
 
 
-
-// Infobulles pour les icônes en mode réduit
-$(document).ready(function() {
+    // Infobulles pour les icônes en mode réduit
     $('#sidebar.active li a').hover(
         function() {
             $(this).attr('data-bs-toggle', 'tooltip');
