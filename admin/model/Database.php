@@ -37,6 +37,7 @@ class Database {
         return $req;
     }
 
+
     public function getDatas($req, $one= true) {
         $datas= null;
         if($one == true) {
@@ -48,16 +49,5 @@ class Database {
         return $datas; 
     }
 }
-
-
-// $pdo= new PDO(
-//     'mysql:host=localhost;dbname=pharmatrixdb;port=3306;charset=utf8',
-//     'root',
-//     ''
-// );
-// $req= $pdo->prepare('select * from etudiant');
-// $req->execute();
-// $req->setFetchMode(PDO::FETCH_OBJ);
-// $datas= $req->fetchAll();
 
 ?>
