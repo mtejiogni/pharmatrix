@@ -19,7 +19,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="usersTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered usersTable" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>Nom</th>
@@ -81,30 +81,6 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">
-                            Affichage de 1 à 4 sur 4 entrées
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
-                            <ul class="pagination justify-content-end">
-                                <li class="paginate_button page-item previous disabled" id="dataTable_previous">
-                                    <a aria-label="Précédent" href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Précédent</a>
-                                </li>
-                                <li class="paginate_button page-item active">
-                                    <a aria-label="Page 1" href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a>
-                                </li>
-                                <li class="paginate_button page-item next disabled" id="dataTable_next">
-                                    <a aria-label="Suivant" href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">Suivant</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

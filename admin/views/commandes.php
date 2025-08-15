@@ -49,3 +49,232 @@
         </div>
     </div>
 </div>
+
+<!-- Modal Ajout de Commande (Wizard) -->
+<div class="modal fade" id="commandeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="commandeModalTitle">
+            Nouvelle Commande - Étape <span id="currentStep">1</span>/3
+        </h5>
+        <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+        ></button>
+        </div>
+
+        <form id="commandeWizardForm">
+        <!-- Étape 1: Informations client -->
+        <div class="modal-body step step-1">
+            <div class="alert-container"></div>
+
+            <div class="mb-3">
+            <label for="clientNom" class="form-label fw-bold"
+                >Nom <span class="text-danger">*</span></label
+            >
+            <input
+                type="text"
+                class="form-control"
+                id="clientNom"
+                required
+            />
+            <div class="invalid-feedback">
+                Veuillez saisir le nom du client
+            </div>
+            </div>
+
+            <div class="mb-3">
+            <label for="clientPrenom" class="form-label fw-bold"
+                >Prénom <span class="text-danger">*</span></label
+            >
+            <input
+                type="text"
+                class="form-control"
+                id="clientPrenom"
+                required
+            />
+            <div class="invalid-feedback">
+                Veuillez saisir le prénom du client
+            </div>
+            </div>
+
+            <div class="mb-3">
+            <label for="clientEmail" class="form-label fw-bold"
+                >Email</label
+            >
+            <input type="email" class="form-control" id="clientEmail" />
+            <div class="invalid-feedback">
+                Veuillez saisir un email valide
+            </div>
+            </div>
+
+            <div class="mb-3">
+            <label for="clientTelephone" class="form-label fw-bold"
+                >Téléphone <span class="text-danger">*</span></label
+            >
+            <input
+                type="tel"
+                class="form-control"
+                id="clientTelephone"
+                required
+            />
+            <div class="invalid-feedback">
+                Veuillez saisir un numéro de téléphone valide
+            </div>
+            </div>
+        </div>
+
+        <!-- Étape 2: Médicament commandé -->
+        <div class="modal-body step step-2" style="display: none">
+            <div class="alert-container"></div>
+
+            <div class="mb-3">
+            <label for="medicamentId" class="form-label fw-bold"
+                >Médicament <span class="text-danger">*</span></label
+            >
+            <select class="form-select" id="medicamentId" required>
+                <option value="">Sélectionnez un médicament</option>
+                <!-- Options chargées dynamiquement -->
+            </select>
+            <div class="invalid-feedback">
+                Veuillez sélectionner un médicament
+            </div>
+            </div>
+
+            <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="quantite" class="form-label fw-bold"
+                >Quantité <span class="text-danger">*</span></label
+                >
+                <input
+                type="number"
+                class="form-control"
+                id="quantite"
+                min="1"
+                value="1"
+                required
+                />
+                <div class="invalid-feedback">
+                La quantité doit être au moins 1
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="prixUnitaire" class="form-label fw-bold"
+                >Prix Unitaire (FCFA)</label
+                >
+                <input
+                type="text"
+                class="form-control"
+                id="prixUnitaire"
+                readonly
+                />
+            </div>
+            </div>
+
+            <div class="mb-3">
+            <label for="instructions" class="form-label fw-bold"
+                >Instructions spéciales</label
+            >
+            <textarea
+                class="form-control"
+                id="instructions"
+                rows="2"
+            ></textarea>
+            </div>
+        </div>
+
+        <!-- Étape 3: Finalisation -->
+        <div class="modal-body step step-3" style="display: none">
+            <div class="alert-container"></div>
+
+            <div class="confirmation-details">
+            <h5 class="fw-bold mb-4">Récapitulatif de la commande</h5>
+
+            <div class="mb-3">
+                <h6 class="fw-bold">Client</h6>
+                <p>
+                <strong>Nom:</strong> <span id="confirmationNom"></span>
+                </p>
+                <p>
+                <strong>Téléphone:</strong>
+                <span id="confirmationTelephone"></span>
+                </p>
+                <p>
+                <strong>Email:</strong> <span id="confirmationEmail"></span>
+                </p>
+            </div>
+
+            <hr />
+
+            <div class="mb-3">
+                <h6 class="fw-bold">Médicament</h6>
+                <p>
+                <strong>Désignation:</strong>
+                <span id="confirmationMedicament"></span>
+                </p>
+                <p>
+                <strong>Quantité:</strong>
+                <span id="confirmationQuantite"></span>
+                </p>
+                <p>
+                <strong>Prix Unitaire:</strong>
+                <span id="confirmationPrixUnitaire"></span>
+                </p>
+            </div>
+
+            <hr />
+
+            <div class="mb-4">
+                <h6 class="fw-bold">Total</h6>
+                <p class="h5 text-primary">
+                <span id="confirmationTotal"></span>
+                </p>
+            </div>
+
+            <div class="mb-3">
+                <label for="modePaiement" class="form-label fw-bold"
+                >Mode de paiement <span class="text-danger">*</span></label
+                >
+                <select class="form-select" id="modePaiement" required>
+                <option value="">Sélectionnez un mode</option>
+                <option value="especes">Espèces</option>
+                <option value="carte">Carte bancaire</option>
+                <option value="mobile">Paiement mobile</option>
+                <option value="virement">Virement bancaire</option>
+                </select>
+                <div class="invalid-feedback">
+                Veuillez sélectionner un mode de paiement
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button
+            type="button"
+            class="btn btn-secondary"
+            id="prevBtn"
+            style="display: none"
+            >
+            <i class="fas fa-arrow-left me-1"></i> Précédent
+            </button>
+            <button type="button" class="btn btn-primary" id="nextBtn">
+            Suivant <i class="fas fa-arrow-right ms-1"></i>
+            </button>
+            <button
+            type="submit"
+            class="btn btn-success"
+            id="submitBtn"
+            style="display: none"
+            >
+            <i class="fas fa-check me-1"></i> Terminer
+            </button>
+        </div>
+        </form>
+    </div>
+    </div>
+</div>

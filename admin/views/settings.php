@@ -12,7 +12,7 @@
             </div>
             <div class="card-body text-center">
                 <div class="profile-picture mb-3">
-                    <img src="assets/image/Marshadow.jpg" class="rounded-circle" width="150" height="150"
+                    <img src="assets/images/Marshadow.jpg" class="rounded-circle" width="150" height="150"
                         alt="Photo de profil">
                     <button class="btn btn-sm btn-outline-primary mt-2 change-photo-btn">
                         <i class="fas fa-camera me-1"></i> Changer

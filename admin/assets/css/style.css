@@ -327,25 +327,6 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
-
-.card-footer {
-    background-color: #f8f9fc;
-    border-top: 1px solid #e3e6f0;
-}
-
-.pagination .page-item.active .page-link {
-    background-color: #4e73df;
-    border-color: #4e73df;
-}
-
-.pagination .page-link {
-    color: #4e73df;
-}
-
-.pagination .page-item.active .page-link {
-    color: #fff;
-}
-
 /*
 =================================
     End Dashboard
@@ -364,7 +345,7 @@ body {
 =================================
 */
 
-#usersTable th {
+.usersTable th {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -372,11 +353,11 @@ body {
     border-bottom: 2px solid #e3e6f0;
 }
 
-#usersTable td {
+.usersTable td {
     vertical-align: middle;
 }
 
-#usersTable .btn-sm {
+.usersTable .btn-sm {
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
     margin: 0 2px;
@@ -627,6 +608,102 @@ body {
 
 
 
+/*
+=================================
+    Page 404
+=================================
+*/
+
+#op {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.oop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#oops {
+    font-size: 150px;
+    font-weight: 900;
+    background: linear-gradient(180deg, red,  #ff1493, #4b0082,  #1a1a4d);
+    background-clip: text;
+    color: transparent;
+}
+#op_h3 {
+    font-weight: bold;
+    font-size: 30px;
+}
+#op_h5{
+    font-weight: normal;
+    text-align: center;
+}
+#btnx {
+    margin-top: 50px;
+    background-color: blue;
+    color: white;
+    height: 70px;
+    width: 200px;
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+}
+#btnx:hover {
+    background-color: red;
+    transition: all 0.5s;
+}
+#op_img {
+    width:200px ;
+    height:200px;
+}
+@media screen and (max-width:970px) {
+    #oops{
+        font-size: 120px;
+    }
+    #op_img {
+        width:200px ;
+        height:200px;
+    }
+}
+a {
+    color: white;
+    text-decoration-line: none;
+}
+@media screen and (max-width:670px) {
+    #oops{
+        font-size: 60px;
+    }
+    .oop {
+        margin-bottom: 20px;
+    }
+    #op_h3 {
+        font-size: 15px;
+    }
+    #op_h5{
+        font-size: 12px;
+    }
+    #op_img {
+        width:100px ;
+        height:100px;
+    }
+    #btnx  {
+        font-size: 12px;
+        width: 150px;
+    }
+}
+
+/*
+=================================
+    End Page 404
+=================================
+*/
+
+
+
+
 
 
 /*
@@ -715,12 +792,12 @@ body {
         width: calc(100% - 250px);
     }
 
-    #usersTable .btn-sm {
+    .usersTable .btn-sm {
         margin-bottom: 2px;
         display: inline-block;
     }
     
-    #usersTable td, #usersTable th {
+    .usersTable td, .usersTable th {
         white-space: nowrap;
     }
 

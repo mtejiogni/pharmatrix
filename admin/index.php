@@ -10,20 +10,20 @@ require_once 'routes.php';
         <title>Pharmatri+ | Administration</title>
 
         <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/fontawesome.min.css">
         <!-- DataTables CSS -->
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
+        <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
         <div class="wrapper">
             <!-- ======== Sidebar =========== -->
             <nav id="sidebar" class="active">
                 <div class="sidebar-header">
-                    <img src="assets/image/logo.png" alt="Pharmatri+ Logo" class="logo">
+                    <img src="assets/images/logo.png" alt="Pharmatri+ Logo" class="logo">
                     <h3>Pharmatri+</h3>
                 </div>
 
@@ -82,7 +82,7 @@ require_once 'routes.php';
                             <div class="dropdown">
                                 <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    <img src="assets/image/Marshadow.jpg" alt="User" class="avatar">
+                                    <img src="assets/images/Marshadow.jpg" alt="User" class="avatar">
                                     <span class="user-name">Admin</span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
@@ -121,12 +121,11 @@ require_once 'routes.php';
         <!-- jQuery -->
         <script src="assets/js/jquery-3.6.0.min.js"></script>
         <!-- DataTables JS -->
-        <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
+        <script src="assets/js/jquery.dataTables.min.js"></script>
+        <script src="assets/js/dataTables.bootstrap5.min.js"></script>
         <!-- Bootstrap JS Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
         <!-- Custom JS -->
-        <script src="js/script.js"></script>
-        <script src="js/1.js"></script>
+        <script src="assets/js/script.js"></script>
     </body>
 </html>
