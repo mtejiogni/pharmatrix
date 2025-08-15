@@ -6,7 +6,8 @@ $views= array(
     "user" => "$folder_views/users.php",
     "commande" => "$folder_views/commandes.php",
     "medicament" => "$folder_views/medicaments.php",
-    "settings" => "$folder_views/settings.php"
+    "settings" => "$folder_views/settings.php",
+    "all_medicament" => "$folder_views/all_medicaments.php"
 );
 
 

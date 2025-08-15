@@ -35,6 +35,9 @@ require_once 'routes.php';
                         <a href="index.php?view=commande"><i class="fas fa-shopping-cart"></i> <span class="menu-text">Commandes</span></a>
                     </li>
                     <li>
+                        <a href="index.php?view=all_medicament"><i class="fas fa-capsules"></i> <span class="menu-text">Tous les Medicaments</span></a>
+                    </li>
+                    <li>
                         <a href="index.php?view=medicament"><i class="fas fa-capsules"></i> <span class="menu-text">Medicament</span></a>
                     </li>
                     <li>

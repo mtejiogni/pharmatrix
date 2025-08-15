@@ -1,38 +1,38 @@
 <?php
 require_once 'Database.php';
 
-class Coupon_medicament {
+class Users_pharmacieDB {
     private $db;
     private $tablename;
     private $tableid;
 
     public function __construct() {
         $this->db= new Database();
-        $this->tablename= 'coupon_medicament';
-        $this->tableid= array('coupon_id', 'medicament_id');
+        $this->tablename= 'users_pharmacie';
+        $this->tableid= array('users_id', 'pharmacie_id');
     }
 
-    public function create($coupon_id, $medicament_id) {
-        $sql= "insert into $this->tablename set coupon_id=?, medicament_id=?";
-        $params= array($coupon_id, $medicament_id);
+    public function create($users_id, $pharmacie_id) {
+        $sql= "insert into $this->tablename set users_id=?, pharmacie_id=?";
+        $params= array($users_id, $pharmacie_id);
         $this->db->prepare($sql, $params);
     }
 
-    public function update($coupon_id, $medicament_id) {
-        $sql= "update $this->tablename set coupon_id=?, medicament_id=? where $this->tableid[0]=?";
-        $params= array($coupon_id, $medicament_id, $coupon_id);
+    public function update($users_id, $pharmacie_id) {
+        $sql= "update $this->tablename set users_id=?, pharmacie_id=? where $this->tableid[0]=?";
+        $params= array($users_id, $pharmacie_id, $users_id);
         $this->db->prepare($sql, $params);
     }
 
-    public function delete($coupon_id, $medicament_id) {
+    public function delete($users_id, $pharmacie_id) {
         $sql= "delete from $this->tablename where $this->tableid[0]=? and $this->tableid[1]=?";
-        $params= array($coupon_id, $medicament_id);
+        $params= array($users_id, $pharmacie_id);
         $this->db->prepare($sql, $params);
     }
 
-    public function read($coupon_id, $medicament_id) {
+    public function read($users_id, $pharmacie_id) {
         $sql= "select * from $this->tablename where $this->tableid[0]=? and $this->tableid[1]=?";
-        $params= array($coupon_id, $medicament_id);
+        $params= array($users_id, $pharmacie_id);
         $req= $this->db->prepare($sql, $params);
         return $this->db->getDatas($req, true);
     }

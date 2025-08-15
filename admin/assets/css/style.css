@@ -16,6 +16,14 @@ body {
     overflow-x: hidden;
 }
 
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
 .wrapper {
     display: flex;
     width: 100%;

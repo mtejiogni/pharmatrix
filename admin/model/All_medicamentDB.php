@@ -1,7 +1,7 @@
 <?php
 require_once 'Database.php';
 
-class AllMedicamentDB {
+class All_medicamentDB {
     private $db;
     private $tablename;
     private $tableid;

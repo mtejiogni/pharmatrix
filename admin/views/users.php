@@ -1,5 +1,13 @@
-<h1 class="mt-4">Utilisateurs</h1>
-                
+<div class="d-sm-flex align-items-center justify-content-between mt-4">
+    <h1>Utilisateurs</h1>
+    <button class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#formModal">
+        <i class="fas fa-plus me-1"></i> 
+        Ajouter un Utilisateur
+    </button>
+</div>
+
+
+
 <!-- Liste des Utilisateurs -->
 <div class="row mt-4">
     <div class="col-12">
@@ -11,7 +19,6 @@
                         <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-plus me-2"></i>Ajouter utilisateur</a></li>
                         <li><a class="dropdown-item" href="#"><i class="fas fa-file-export me-2"></i>Exporter</a></li>
                         <li><a class="dropdown-item" href="#"><i class="fas fa-filter me-2"></i>Filtrer</a></li>
                     </ul>
@@ -82,6 +89,48 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Form Modal -->
+<div class="modal fade" id="formModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">Ajouter un Utilisateur</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form name="form_edit" method="POST" action="#">
+                    <p>
+                        <label class="form-label fw-bold">
+                            Entrez l'intitulé
+                        </label>
+                        <input type="text" name="intitule" id="intitule" required class="form-control" />
+                    </p>
+
+                    <p>
+                        <label class="form-label fw-bold">
+                            Description
+                        </label>
+                        <input type="text" name="intitule" id="intitule" required class="form-control" />
+                    </p>
+
+                    <p class="text-right">
+                        <input type="reset" class="btn btn-danger" value="Effacer" data-bs-dismiss="modal" />
+                        <input type="submit" class="btn btn-success" value="Enregistrer" />
+                    </p>
+                </form>
+            </div>
+            <div class="modal-footer">
+                
             </div>
         </div>
     </div>
