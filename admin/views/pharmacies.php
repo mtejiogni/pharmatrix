@@ -1,3 +1,7 @@
+<?php
+$pharmacies= $pharmaciedb->readAll();
+?>
+
 <div class="d-sm-flex align-items-center justify-content-between mt-4">
     <h1>Pharmacies</h1>
     <button class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#formModal">
@@ -32,10 +36,10 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table id="commandesTable" class="table table-striped table-bordered" style="width: 100%">
+            <table class="dataTable table table-striped table-bordered" style="width: 100%">
                 <thead class="table-light">
                     <tr>
-                        <th>N° Pharmacie</th>
+                        <th>N°</th>
                         <th>Intitulé</th>
                         <th>Téléphone</th>
                         <th>Localisation</th>
@@ -43,7 +47,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Les données seront chargées dynamiquement -->
+                    <?php
+                        if($pharmacies != null && sizeof($pharmacies) > 0) :
+                            $i= 0;
+                            foreach($pharmacies as $ph) :
+                                $i++;
+                    ?>
+                    <tr>
+                        <td><?= $i ?></td>
+                        <td><?= $ph->name ?></td>
+                        <td><?= $ph->phone ?></td>
+                        <td><?= $ph->location ?></td>
+                        <td>
+                            <button aria-label="Modifier" class="btn btn-sm btn-warning btn-update" data-bs-toggle="modal" data-bs-target="#formModal" onclick="editForm(<?= json_encode($ph) ?>)">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button aria-label="Supprimer" class="btn btn-sm btn-danger btn-delete" onclick="deleteForm(<?= $ph->pharmacie_id ?>)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <?php
+                            endforeach;
+                        endif;
+                    ?>
                 </tbody>
             </table>
         </div>
