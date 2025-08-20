@@ -13,7 +13,7 @@
             </div>
 
             <div id="connexion_form">
-                <form name="form" method="POST" action="#">
+                <form name="form" method="POST" action="admin/controller/connexionController.php">
                     <div class="logo_form">
                         <img src="./assets/images/logo.png" alt="photo">
                     </div>
