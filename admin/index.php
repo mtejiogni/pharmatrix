@@ -1,5 +1,9 @@
 <?php
+require_once 'service.php';
 require_once 'routes.php';
+
+include('views/erreur.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -122,8 +126,12 @@ require_once 'routes.php';
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#"><i
-                                                class="fas fa-sign-out-alt me-2"></i>Déconnexion</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="controller/deconnexionController.php">
+                                            <i class="fas fa-sign-out-alt me-2"></i>
+                                            Déconnexion
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

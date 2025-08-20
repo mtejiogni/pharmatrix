@@ -1,7 +1,7 @@
 <?php
 require_once 'Database.php';
 
-class UserDB {
+class UsersDB {
     private $db;
     private $tablename;
     private $tableid;

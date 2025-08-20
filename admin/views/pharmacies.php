@@ -62,7 +62,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form name="form_edit" method="POST" action="#">
+                <form name="form_edit" method="POST" action="controller/pharmacieController.php?action=create">
                     <p>
                         <label class="form-label fw-bold">
                             Entrez l'intitulé

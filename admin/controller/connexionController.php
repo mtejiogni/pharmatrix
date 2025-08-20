@@ -19,7 +19,7 @@ else {
         'message' => "Bienvenue $user->first_name"
     );
     $_SESSION['profil']= $user;
-    header('Location:index.php?view=dashboard');
+    header('Location:../index.php?view=dashboard');
 }
 
 ?>
