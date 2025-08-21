@@ -4,7 +4,7 @@ $pharmacies= $pharmaciedb->readAll();
 
 <div class="d-sm-flex align-items-center justify-content-between mt-4">
     <h1>Pharmacies</h1>
-    <button class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#formModal">
+    <button class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#formModal" onclick="createForm()">
         <i class="fas fa-plus me-1"></i> 
         Ajouter une pharmacie
     </button>
@@ -59,7 +59,7 @@ $pharmacies= $pharmaciedb->readAll();
                         <td><?= $ph->phone ?></td>
                         <td><?= $ph->location ?></td>
                         <td>
-                            <button aria-label="Modifier" class="btn btn-sm btn-warning btn-update" data-bs-toggle="modal" data-bs-target="#formModal" onclick="editForm(<?= json_encode($ph) ?>)">
+                            <button aria-label="Modifier" class="btn btn-sm btn-warning btn-update" data-bs-toggle="modal" data-bs-target="#formModal" onclick="editForm(<?= $ph->pharmacie_id ?>)">
                                 <i class="fas fa-edit"></i>
                             </button>
                             <button aria-label="Supprimer" class="btn btn-sm btn-danger btn-delete" onclick="deleteForm(<?= $ph->pharmacie_id ?>)">
@@ -85,11 +85,14 @@ $pharmacies= $pharmaciedb->readAll();
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title">Ajouter une pharmacie</h5>
+                <h5 class="modal-title">
+                    Informations sur la pharmacie
+                </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form name="form_edit" method="POST" action="controller/pharmacieController.php?action=create">
+                <form name="form_edit" id="form_edit" method="POST" action="#">
+                    <input type="hidden" name="pharmacie_id" id="pharmacie_id" />
                     <p>
                         <label class="form-label fw-bold">
                             Entrez l'intitulé
@@ -123,3 +126,38 @@ $pharmacies= $pharmaciedb->readAll();
         </div>
     </div>
 </div>
+
+
+
+<script type="text/javascript">
+    function createForm() {
+        document.querySelector("#form_edit").setAttribute('action', 'controller/pharmacieController.php?action=create');
+        document.querySelector("#form_edit").reset();
+    }
+
+
+
+    async function editForm(id) {
+        try {
+            const response= await fetch(`controller/pharmacieController.php?action=read&pharmacie_id=${id}`);
+            if(response.status == 200) {
+                const data= await response.json();
+                console.log(data);
+                document.querySelector("#pharmacie_id").value= data.pharmacie_id;
+                document.querySelector("#name").value= data.name;
+                document.querySelector("#phone").value= data.phone;
+                document.querySelector("#location").value= data.location;
+                document.querySelector("#form_edit").setAttribute('action', 'controller/pharmacieController.php?action=update');
+            }
+        }
+        catch(error) {
+            console.error('Erreur : ', error);
+        }
+    }
+
+
+    
+    function deleteForm(id) {
+        document.location.href= `controller/pharmacieController.php?action=delete&pharmacie_id=${id}`;
+    }
+</script>

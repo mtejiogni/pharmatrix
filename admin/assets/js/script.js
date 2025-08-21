@@ -14,7 +14,7 @@ $(document).ready(function () {
         language: {
             url: getPathFolder() + '/assets/js/French.json'
         },
-        dom: '<"top"f>rt<"bottom"lip><"clear">',
+        dom: '<"top"fl>rt<"bottom"lp><"clear">',
         pageLength: 10,
         lengthMenu: [10, 25, 50, 100],
         columnDefs: [
