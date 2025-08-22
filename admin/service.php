@@ -9,6 +9,8 @@ require_once 'model/PharmacieDB.php';
 require_once 'model/Users_pharmacieDB.php';
 require_once 'model/UsersDB.php';
 
+require_once 'tools/Package.php';
+
 $all_medicamentdb= new All_medicamentDB();
 $coupon_medicamentdb= new Coupon_medicamentDB();
 $coupondb= new CouponDB();
@@ -16,5 +18,7 @@ $medicamentdb= new MedicamentDB();
 $pharmaciedb= new PharmacieDB();
 $users_pharmaciedb= new Users_pharmacieDB();
 $usersdb= new UsersDB();
+
+$package= new Package();
 
 ?>
