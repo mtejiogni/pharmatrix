@@ -50,6 +50,25 @@ class UsersDB {
         $req= $this->db->prepare($sql, $params);
         return $this->db->getDatas($req, true);
     }
+
+    // Recherche pour la connexion en fonction de l'email et
+    // du mot de passe original
+    // password_verify : compare le mot passe original avec le
+    // le mot de passe hashé dans la base de données
+    public function readConnexion2($email, $password) {
+        $datas= $this->readAll();
+        if($datas != null && sizeof($datas)> 0) {
+            foreach($datas as $d) {
+                if($d->email == $email && password_verify($password, $d->password) == true) {
+                    return $d;
+                }
+            }
+            return false;
+        }
+        else {
+            return false;
+        }
+    }
 }
 
 ?>

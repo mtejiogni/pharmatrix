@@ -22,8 +22,7 @@ if(isset($_GET['view']) == true) {
     }
 }
 else {
-    //header("Location:../index.php");
-    header("Location:index.php?view=dashboard");
+    header("Location:../index.php");
 }
 
 ?>

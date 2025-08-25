@@ -17,7 +17,7 @@ create table users (
 
 insert into users (first_name, last_name, phone, `location`, email, `password`, `role`, photo)
 values
-('admin', 'admin', '693909121', 'PK13', 'admin@yahoo.com', 'admin', 'Administrateur', null);
+('admin', 'admin', '693909121', 'PK13', 'admin@yahoo.com', '$2y$10$b6AWzsbNYc4ByrZU0roUCOEkTiNyPRy2garHJFoHqQVk2wpuRxPmm', 'Administrateur', null);
 
 
 

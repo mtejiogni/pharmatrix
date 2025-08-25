@@ -2,6 +2,14 @@
 require_once 'service.php';
 require_once 'routes.php';
 
+$profil= null;
+if(isset($_SESSION['profil']) == true) {
+    $profil= $_SESSION['profil'];
+}
+else {
+    header('Location:../login.php');
+}
+
 include('views/erreur.php');
 
 ?>
@@ -32,30 +40,35 @@ include('views/erreur.php');
                 </div>
 
                 <ul class="list-unstyled components">
+                    <?php if($profil->role == 'Administrateur'): ?>
                     <li class="active">
                         <a href="index.php?view=dashboard">
                             <i class="fas fa-home"></i> 
                             <span class="menu-text">Dashboard</span>
                         </a>
                     </li>
+                    <?php endif ?>
                     <li>
                         <a href="index.php?view=pharmacie">
                             <i class="fas fa-plus-circle"></i> 
                             <span class="menu-text">Pharmacies</span>
                         </a>
                     </li>
+                    <?php if($profil->role == 'Administrateur'): ?>
                     <li>
                         <a href="index.php?view=all_medicament">
                             <i class="fas fa-capsules"></i> 
                             <span class="menu-text">Tous les Medicaments</span>
                         </a>
                     </li>
+                    <?php endif ?>
                     <li>
                         <a href="index.php?view=medicament">
                             <i class="fas fa-capsules"></i> 
                             <span class="menu-text">Medicaments</span>
                         </a>
                     </li>
+                    <?php if($profil->role == 'Administrateur'): ?>
                     <li>
                         <a href="index.php?view=user">
                             <i class="fas fa-users"></i> 
@@ -68,6 +81,7 @@ include('views/erreur.php');
                             <span class="menu-text">Coupons</span>
                         </a>
                     </li>
+                    <?php endif ?>
                     <li>
                         <a href="index.php?view=settings">
                             <i class="fas fa-cog"></i> 
@@ -113,8 +127,17 @@ include('views/erreur.php');
                             <div class="dropdown">
                                 <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    <img src="assets/images/Marshadow.jpg" alt="User" class="avatar">
-                                    <span class="user-name">Admin</span>
+                                    <?php
+                                        if($profil->photo != null && $profil->photo != '') {
+                                            echo '<img src="controller/files/user/' . $profil->photo . '" alt="User" class="avatar">';
+                                        }
+                                        else {
+                                            echo '<span style="color:gray;"><i class="fa fa-user-circle fa-2x"></i></span>';
+                                        }
+                                    ?>
+                                    <span class="user-name">
+                                        <?php echo $profil->first_name . ' ' . $profil->last_name ?>
+                                    </span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                                     <li>

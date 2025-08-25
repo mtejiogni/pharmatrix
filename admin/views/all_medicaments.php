@@ -141,6 +141,7 @@ $all_medicaments= $all_medicamentdb->readAll();
 
     function createForm() {
         document.querySelector("#form_edit").setAttribute('action', `${controllerName}?action=create`);
+        document.querySelector("#photo").setAttribute('required', '');
         document.querySelector("#form_edit").reset();
     }
 
@@ -155,6 +156,7 @@ $all_medicaments= $all_medicamentdb->readAll();
                 document.querySelector("#all_medicament_id").value= data.all_medicament_id;
                 document.querySelector("#name").value= data.name;
                 document.querySelector("#description").value= data.description;
+                document.querySelector("#photo").removeAttribute('required');
                 document.querySelector("#photo_view").innerHTML= `<img src="controller/files/medicament/${data.photo}" />`;
                 document.querySelector("#form_edit").setAttribute('action', `${controllerName}?action=update`);
             }

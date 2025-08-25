@@ -468,6 +468,7 @@ body {
     align-items: center;
     flex-direction: column;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 100px;
 }
 .oop {
     display: flex;
@@ -475,7 +476,7 @@ body {
     align-items: center;
 }
 #oops {
-    font-size: 150px;
+    font-size: 60pt;
     font-weight: 900;
     background: linear-gradient(180deg, red,  #ff1493, #4b0082,  #1a1a4d);
     background-clip: text;
@@ -483,18 +484,17 @@ body {
 }
 #op_h3 {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20pt;
 }
 #op_h5{
     font-weight: normal;
     text-align: center;
 }
 #btnx {
-    margin-top: 50px;
+    margin-top: 20px;
     background-color: blue;
     color: white;
-    height: 70px;
-    width: 200px;
+    padding: 15px 20px;
     border: none;
     border-radius: 80px;
     cursor: pointer;
@@ -504,22 +504,10 @@ body {
     transition: all 0.5s;
 }
 #op_img {
-    width:200px ;
-    height:200px;
+    width:100px ;
+    height:100px;
 }
-@media screen and (max-width:970px) {
-    #oops{
-        font-size: 120px;
-    }
-    #op_img {
-        width:200px ;
-        height:200px;
-    }
-}
-a {
-    color: white;
-    text-decoration-line: none;
-}
+
 @media screen and (max-width:670px) {
     #oops{
         font-size: 60px;
@@ -539,7 +527,30 @@ a {
     }
     #btnx  {
         font-size: 12px;
-        width: 150px;
+        padding: 15px 20px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    #oops{
+        font-size: 20pt;
+    }
+    .oop {
+        margin-bottom: 20px;
+    }
+    #op_h3 {
+        font-size: 10pt;
+    }
+    #op_h5{
+        font-size: 10pt;
+    }
+    #op_img {
+        width:50px;
+        height:50px;
+    }
+    #btnx  {
+        font-size: 10pt;
+        padding: 10px 12px;
     }
 }
 

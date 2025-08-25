@@ -1,6 +1,7 @@
 <?php 
 require_once '../service.php';
 
+// Chemin vers les images de médicament
 $path_dest= './files/medicament/'; 
 
 $action= $_GET['action'];
@@ -63,9 +64,12 @@ if($action == 'update') {
 
         $name= $_POST['name'];
         $description= $_POST['description'];
+        $photo= $all_medicament->photo;
 
-        unlink($path_dest . $all_medicament->photo);
-        $photo= $package->upload_image($_FILES['photo'], 'med', 300, 300, $path_dest);
+        if(isset($_FILES['photo']) == true && $_FILES['photo']['size'] > 0) {
+            unlink($path_dest . $all_medicament->photo);
+            $photo= $package->upload_image($_FILES['photo'], 'med', 300, 300, $path_dest);
+        }
         
         if($photo == null) {
             $_SESSION['erreur']= array(

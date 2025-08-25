@@ -1,3 +1,8 @@
+<?php
+
+include('./admin/views/erreur.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
